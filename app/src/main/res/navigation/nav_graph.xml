@@ -3,31 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/StartFragment">
-
+    app:startDestination="@id/startFragment">
 
     <fragment
-        android:id="@+id/StartFragment"
+        android:id="@+id/startFragment"
         android:name="com.example.madlevel3task1.StartFragment"
-        android:label="start_fragment"
-        tools:layout="@layout/fragment_start">
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_StartFragment_to_RatingFragment"
-            app:destination="@id/RatingFragment"
-            app:enterAnim="@anim/fragment_open_enter" />
+            app:destination="@id/ratingFragment" />
     </fragment>
     <fragment
-        android:id="@+id/RatingFragment"
+        android:id="@+id/ratingFragment"
         android:name="com.example.madlevel3task1.RatingFragment"
-        android:label="rating_fragment"
-        tools:layout="@layout/fragment_rating">
-
-        <action
-            android:id="@+id/action_RatingFragment_to_StartFragment"
-            app:destination="@id/StartFragment" />
+        android:label="fragment_rating"
+        tools:layout="@layout/fragment_rating" >
         <action
             android:id="@+id/action_RatingFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_RatingFragment_to_StartFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/summaryFragment"
@@ -35,7 +32,9 @@
         android:label="fragment_summary"
         tools:layout="@layout/fragment_summary" >
         <action
-            android:id="@+id/action_summaryFragment_to_StartFragment"
-            app:destination="@id/StartFragment" />
+            android:id="@+id/action_summaryFragment_to_startFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
 </navigation>
