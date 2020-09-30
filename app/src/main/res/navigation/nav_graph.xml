@@ -32,7 +32,7 @@
         android:label="fragment_summary"
         tools:layout="@layout/fragment_summary" >
         <action
-            android:id="@+id/action_summaryFragment_to_startFragment"
+            android:id="@+id/action_SummaryFragment_to_startFragment"
             app:popUpToInclusive="true"
             app:popUpTo="@id/startFragment"
             app:destination="@id/startFragment" />
